@@ -4,9 +4,17 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
       
-    link(rel= 'stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
-    link(rel="stylesheet" href="css/materialize.min.css" type="text/css" media="screen,projection")
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    //- link(rel= 'stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    //- link(rel="stylesheet" href="css/materialize.min.css" type="text/css" media="screen,projection")
+    //- script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    // Compiled and minified CSS
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  // Compiled and minified JavaScript
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  link(rel='stylesheet' href='css/materialize.min.css' type='text/css' media='screen,projection')
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+  script(src='/javascripts/app.js')
 
     
 
@@ -14,10 +22,30 @@ html
     block content
     table(style='width:100%', border='0', cellpadding='0' cellspacing='0' bgcolor='#f6f6ef')
     
-    div.text-center
-        div(class="form-signin")
-            div.text-center
-                p welcome  #{title}!
+    //- div.text-center
+    //-     div(class="form-signin")
+    //-         div.text-center
+    //-             p welcome  #{title}!
+    //-             .container
+    //-               .nav
+    //-                  .nav-wrapper
+    //-                     a.brand-logo(href='#')
+               
+  nav
+  .nav-wrapper
+    a.brand-logo(href='#')
+    ul#nav-mobile.left
+      li
+        a(href='News.html') news
+      li
+        a(href='signup.html') signup
+      li
+        a(href='login.html') login
 
-    
-	
+form(method='post' action='/addname')
+  label Enter Your Name
+  br
+  input(type='text' name='firstName' placeholder='Enter first name...' required='')
+  input(type='text' name='lastName' placeholder='Enter last name...' required='')
+  input(type='submit' value='Add Name')
+
